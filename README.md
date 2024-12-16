@@ -63,3 +63,5 @@ python server.py
    - Settings > Machine Learning > Add Model
    - URL: http://localhost:9090
    - 연결 후 자동 레이블링 활성화 
+
+   check
