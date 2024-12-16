@@ -27,3 +27,39 @@
 - **Python**: 백엔드 및 모델 통합
 - **Hugging Face Transformers**: 사전 훈련된 모델 및 파이프라인
 - **Docker**: 환경 일관성 및 배포 용이성
+
+### 설치 방법
+
+1. 필요한 패키지 설치:
+```bash
+pip install -r requirements.txt
+```
+
+2. Label Studio 실행:
+```bash
+label-studio start
+```
+
+3. ML 백엔드 서버 실행:
+```bash
+python server.py
+```
+
+## Label Studio 프로젝트 설정
+
+1. Label Studio 웹 인터페이스에서 새 프로젝트 생성
+2. 다음 레이블링 설정을 사용:
+
+```xml
+<View>
+  <Image name="image" value="$image"/>
+  <TextArea name="transcription" toName="image" 
+            editable="true" perRegion="false"
+            required="true" maxSubmissions="1"/>
+</View>
+```
+
+3. ML 백엔드 연결:
+   - Settings > Machine Learning > Add Model
+   - URL: http://localhost:9090
+   - 연결 후 자동 레이블링 활성화 
